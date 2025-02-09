@@ -1,6 +1,6 @@
 import { OneSignal } from 'react-native-onesignal';
 
-import { StatusBar } from 'react-native';
+import { Platform, StatusBar } from 'react-native';
 import { NativeBaseProvider } from 'native-base';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 
@@ -11,7 +11,8 @@ import { Loading } from './src/components/Loading';
 
 import { CartContextProvider } from './src/contexts/CartContext';
 
-OneSignal.initialize("3626b1dd-242f-475a-9234-32424628b09a");
+const oneSignalAppId = Platform.OS === 'ios' ? 'iOS-ID' : '3626b1dd-242f-475a-9234-32424628b09a';
+OneSignal.initialize(oneSignalAppId);
 OneSignal.Notifications.requestPermission(true)
 
 export default function App() {
