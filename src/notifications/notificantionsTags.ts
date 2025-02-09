@@ -6,3 +6,7 @@ export function tagUserInfoCreate() {
     'user_email': 'teste1@rteste.com.br'
   });
 }
+
+export function tagCartUpdate(itemsCount: string) {
+  OneSignal.User.addTag('cart_items_count', itemsCount);
+}
