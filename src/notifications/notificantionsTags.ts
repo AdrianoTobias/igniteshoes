@@ -1,5 +1,8 @@
 import { OneSignal } from 'react-native-onesignal';
 
-export function tagUserEmailCreate(email: string) {
-  OneSignal.User.removeTag('user_email');
+export function tagUserInfoCreate() {
+  OneSignal.User.addTags({
+    'user_name': 'Teste 1',
+    'user_email': 'teste1@rteste.com.br'
+  });
 }
